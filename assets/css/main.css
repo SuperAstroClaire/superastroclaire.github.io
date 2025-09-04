@@ -1290,7 +1290,7 @@ input, select, textarea {
 				display: none;
 			}
 
-		/* #header .logo {
+		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
@@ -1300,17 +1300,7 @@ input, select, textarea {
 
 			#header .logo .icon:before {
 				font-size: 2rem;
-			} */
-		#header .logo {
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		}
-		#header .logo img {
-		  width: 70%;
-		  height: auto;
-		}
-
+			} 
 
 		#header .content {
 			border-style: solid;
@@ -1669,6 +1659,7 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
 
 
 
