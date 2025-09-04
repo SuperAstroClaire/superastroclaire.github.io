@@ -1290,7 +1290,7 @@ input, select, textarea {
 				display: none;
 			}
 
-		#header .logo {
+		/* #header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
@@ -1300,7 +1300,28 @@ input, select, textarea {
 
 			#header .logo .icon:before {
 				font-size: 2rem;
-			}
+			} */
+		/* Center the custom logo image inside the circle */
+		#header .logo {
+		  position: relative;
+		  width: 6rem;
+		  height: 6rem;
+		  border-radius: 50%;
+		  line-height: 0;              /* stop baseline shifting */
+		}
+		
+		#header .logo .icon { display: none; }  /* hide FA icon, if still present */
+		
+		#header .logo img.brand-mark {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  width: 70%;                  /* adjust size to taste */
+		  height: auto;
+		  display: block;
+		}
+
 
 		#header .content {
 			border-style: solid;
@@ -1659,4 +1680,5 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
 
