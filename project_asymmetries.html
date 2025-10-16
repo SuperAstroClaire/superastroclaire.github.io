@@ -19,25 +19,31 @@
         width: 100%;
         height: 100%;
       }
-      .image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-      }
-      figure {
-        margin: 0;
-        text-align: center;
-      }
-      figure img, figure video {
-        width: 100%;
-        border-radius: 0.5rem;
-      }
-      figcaption {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #aaa;
-      }
+      .stream-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);  /* exactly 2 columns */
+          gap: 1.5rem;
+          align-items: start;
+          margin: 2rem 0;
+        }
+        
+        /* mobile: stack */
+        @media (max-width: 900px) {
+          .stream-grid { grid-template-columns: 1fr; }
+        }
+        
+        .stream-grid figure { margin: 0; text-align: center; }
+        .stream-grid img, .stream-grid video {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: .5rem;
+        }
+        .stream-grid figcaption {
+          margin-top: .5rem;
+          font-size: .9rem;
+          color: #aaa;
+        }
     </style>
   </head>
   <body class="is-preload">
@@ -90,11 +96,11 @@
           and after the merger. Notice the emergence of <strong>gaps and asymmetries</strong> in the leading and trailing arms.
         </p>
 
-        <!-- Two rows, two columns (1 stream per row) -->
-        <div class="image-grid">
+        <div class="stream-grid">
+          <!-- Row 1: Stream A -->
           <figure>
             <img src="images/NGC2419_3_7Gyr.png" alt="Stream NGC2419 - 3.7 Gyr">
-            <figcaption>Stream A showing under- and over-densities after the merger, and the stream has been fragmented in two pieces.</figcaption>
+            <figcaption>Stream A at 3.7 Gyr.</figcaption>
           </figure>
           <figure>
             <video controls loop muted>
@@ -102,9 +108,10 @@
             </video>
             <figcaption>Animation of Stream A.</figcaption>
           </figure>
+          <!-- Row 2: Stream B -->
           <figure>
             <img src="images/NGC5053_3Gyr.png" alt="Stream NGC5053 - 3.0 Gyr">
-            <figcaption>Stream B showing bifurcation after the merger.</figcaption>
+            <figcaption>Stream B at 3.0 Gyr.</figcaption>
           </figure>
           <figure>
             <video controls loop muted>
