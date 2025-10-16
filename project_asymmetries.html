@@ -10,7 +10,7 @@
         position: relative;
         width: 100%;
         max-width: 900px;
-        margin: 0 auto 2rem;
+        margin: 2rem auto;
         aspect-ratio: 16 / 9;
       }
       .video-container iframe {
@@ -19,22 +19,60 @@
         width: 100%;
         height: 100%;
       }
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      figure {
+        margin: 0;
+        text-align: center;
+      }
+      figure img, figure video {
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+      figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
     </style>
   </head>
   <body class="is-preload">
+
+    <!-- Header -->
     <header id="header">
       <a href="index.html" class="logo">← Back to Home</a>
     </header>
 
+    <!-- Main -->
     <div id="main">
       <section id="content" class="main">
         <header class="major">
-          <h1>Asymmetries in stellar streams induced by a galactic merger</h1>
-          <p>Short project subtitle or tagline here</p>
+          <h1>Asymmetries in Stellar Streams Induced by a Galactic Merger</h1>
         </header>
 
-        <p>Write your project description here. You can include paragraphs, images, and even embedded videos.</p>
+        <p>
+          This project explores how a <strong>1:10 galactic merger</strong> can disturb and reshape the stellar streams
+          produced by globular clusters orbiting a Milky-Way-like galaxy.
+          The study is presented in our paper
+          <a href="https://arxiv.org/abs/2510.06329" target="_blank">
+            <em>Asymmetries in stellar streams induced by a galactic merger</em>
+          </a> (Guillaume et&nbsp;al., 2025, submitted).
+          Using a collisionless <strong>N-body simulation</strong>, we followed
+          36 globular clusters over 10 Gyr to quantify how a merging satellite perturbs their tidal tails.
+        </p>
 
+        <p>
+          The animation below shows the full simulation: initially, the globular clusters orbit in smooth symmetry
+          around the host galaxy. As time advances, a massive satellite approaches, crosses the disk twice,
+          and finally merges, triggering <strong>gaps, folds, and asymmetries</strong> in the stellar streams.
+          At the end, the camera rotates around the system, highlighting each stream in color.
+        </p>
+
+        <!-- YouTube video -->
         <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/9kMpOIoLIrQ?rel=0&modestbranding=1"
@@ -44,11 +82,51 @@
             allowfullscreen>
           </iframe>
         </div>
+
+        <h2>Individual Streams and Their Perturbations</h2>
+        <p>
+          Below, two representative streams are shown. Each row corresponds to one stream: the left panel
+          shows a still image, while the right panel displays a short animation of its evolution during
+          and after the merger. Notice the emergence of <strong>gaps and asymmetries</strong> in the leading and trailing arms.
+        </p>
+
+        <!-- Two rows, two columns (1 stream per row) -->
+        <div class="image-grid">
+          <figure>
+            <img src="images/NGC2419_3_7Gyr.png" alt="Stream NGC2419 - 3.7 Gyr">
+            <figcaption>Stream A showing under- and over-densities after the merger, and the stream has been fragmented in two pieces.</figcaption>
+          </figure>
+          <figure>
+            <video controls loop muted>
+              <source src="videos/NGC2419_animation3.mp4" type="video/mp4">
+            </video>
+            <figcaption>Animation of Stream A.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/NGC5053_3Gyr.png" alt="Stream NGC5053 - 3.0 Gyr">
+            <figcaption>Stream B showing bifurcation after the merger.</figcaption>
+          </figure>
+          <figure>
+            <video controls loop muted>
+              <source src="videos/NGC5053_animation.mp4" type="video/mp4">
+            </video>
+            <figcaption>Animation of Stream B.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          These visualizations illustrate how <strong>galactic mergers</strong> can leave long-lasting signatures
+          in the morphology of stellar streams—an important consideration for using streams to map the Milky Way’s
+          dark matter distribution.
+        </p>
       </section>
     </div>
 
+    <!-- Footer -->
     <footer id="footer">
-      <p class="copyright">&copy; Claire Guillaume 2025. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p class="copyright">
+        &copy; Claire Guillaume 2025. Design: <a href="https://html5up.net">HTML5 UP</a>.
+      </p>
     </footer>
 
     <script src="assets/js/jquery.min.js"></script>
