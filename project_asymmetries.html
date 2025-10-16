@@ -21,28 +21,40 @@
       }
       .stream-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);  /* exactly 2 columns */
+          grid-template-columns: repeat(2, 1fr);  /* 2 columns: image + animation */
           gap: 1.5rem;
-          align-items: start;
+          align-items: center;  /* ✅ vertically center each item in a row */
+          justify-items: center;  /* ✅ horizontally center content */
           margin: 2rem 0;
         }
         
-        /* mobile: stack */
+        /* Responsive: stack vertically on small screens */
         @media (max-width: 900px) {
-          .stream-grid { grid-template-columns: 1fr; }
+          .stream-grid {
+            grid-template-columns: 1fr;
+          }
         }
         
-        .stream-grid figure { margin: 0; text-align: center; }
-        .stream-grid img, .stream-grid video {
-          width: 100%;
-          height: auto;
-          display: block;
-          border-radius: .5rem;
+        .stream-grid figure {
+          margin: 0;
+          text-align: center;
         }
+        
+        .stream-grid img,
+        .stream-grid video {
+          width: 100%;
+          max-width: 500px;   /* optional: keeps them same visual width */
+          height: auto;
+          border-radius: 0.5rem;
+          display: block;
+          margin: 0 auto;
+        }
+        
         .stream-grid figcaption {
-          margin-top: .5rem;
-          font-size: .9rem;
+          margin-top: 0.5rem;
+          font-size: 0.9rem;
           color: #aaa;
+          line-height: 1.4;
         }
     </style>
   </head>
@@ -72,8 +84,8 @@
         </p>
 
         <p>
-          The animation below shows the full simulation: initially, the globular clusters orbit in smooth symmetry
-          around the host galaxy. As time advances, a massive satellite approaches, crosses the disk twice,
+          The animation below shows the full simulation: initially, the globular clusters orbit around the host galaxy. 
+          Stellar streams gradually form as clusters lose stars. As time advances, a massive satellite approaches, crosses the disk twice,
           and finally merges, triggering <strong>gaps, folds, and asymmetries</strong> in the stellar streams.
           At the end, the camera rotates around the system, highlighting each stream in color.
         </p>
@@ -91,22 +103,24 @@
 
         <h2>Individual Streams and Their Perturbations</h2>
         <p>
+          The simulation reveals a rich variety of merger-induced stream morphologies, including gaps, folds, 
+          bifurcations, fanning structures, asymmetries, and regions of over- and under-density.
           Below, two representative streams are shown. Each row corresponds to one stream: the left panel
-          shows a still image, while the right panel displays a short animation of its evolution during
-          and after the merger. Notice the emergence of <strong>gaps and asymmetries</strong> in the leading and trailing arms.
+          shows the stream at one timestep, while the right panel displays a short animation of its evolution during
+          and after the merger. 
         </p>
 
         <div class="stream-grid">
           <!-- Row 1: Stream A -->
           <figure>
             <img src="images/NGC2419_3_7Gyr.png" alt="Stream NGC2419 - 3.7 Gyr">
-            <figcaption>Stream A at 3.7 Gyr.</figcaption>
+            <figcaption>Stream A at 3.7 Gyr (Red cross: center of mass of the Milky-Way type galaxie).</figcaption>
           </figure>
           <figure>
             <video controls loop muted>
               <source src="videos/NGC2419_animation3.mp4" type="video/mp4">
             </video>
-            <figcaption>Animation of Stream A.</figcaption>
+            <figcaption>Animation of Stream A (Black cross: center of mass of the Milky-Way type galaxie, blue cross: same for the satellite galaxie).</figcaption>
           </figure>
           <!-- Row 2: Stream B -->
           <figure>
@@ -121,11 +135,6 @@
           </figure>
         </div>
 
-        <p>
-          These visualizations illustrate how <strong>galactic mergers</strong> can leave long-lasting signatures
-          in the morphology of stellar streams—an important consideration for using streams to map the Milky Way’s
-          dark matter distribution.
-        </p>
       </section>
     </div>
 
