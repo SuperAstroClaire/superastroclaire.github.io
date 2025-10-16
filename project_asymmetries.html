@@ -5,15 +5,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 2rem;
+        aspect-ratio: 16 / 9;
+      }
+      .video-container iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body class="is-preload">
-
-    <!-- Header -->
     <header id="header">
       <a href="index.html" class="logo">← Back to Home</a>
     </header>
 
-    <!-- Main -->
     <div id="main">
       <section id="content" class="main">
         <header class="major">
@@ -23,25 +35,20 @@
 
         <p>Write your project description here. You can include paragraphs, images, and even embedded videos.</p>
 
-        <!-- Example image 
-        <span class="image main"><img src="images/frame_0175.png" alt="" /></span>    -->
-
-        <!-- Example YouTube video -->
-        <div class="video-container" style="text-align:center;">
-          <iframe width="560" height="315"
-            src="https://youtu.be/9kMpOIoLIrQ?si=2loxD_4BlIB5chVd"
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/9kMpOIoLIrQ?rel=0&modestbranding=1"
             title="When galaxies collide: How a merger distorts stellar streams (N-body Simulation)"
             frameborder="0"
-            allowfullscreen></iframe>
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
-
-
       </section>
     </div>
 
-    <!-- Footer -->
     <footer id="footer">
-      <p class="copyright">&copy; Boss. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      <p class="copyright">&copy; Claire Guillaume 2025. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
 
     <script src="assets/js/jquery.min.js"></script>
