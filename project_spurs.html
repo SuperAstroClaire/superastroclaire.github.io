@@ -28,8 +28,7 @@
         text-align: center;
       }
 
-      .stream-grid img,
-      .stream-grid video {
+      .stream-grid img {
         width: 100%;
         max-width: 100%;
         height: auto;
@@ -37,6 +36,17 @@
         display: block;
         margin: 0 auto;
       }
+
+      .stream-grid video {
+          width: 100%;
+          max-width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: contain;
+          background: #000;
+          border-radius: 0.5rem;
+          display: block;
+          margin: 0 auto;
+        }
 
       .single-figure {
         margin: 2rem auto;
@@ -127,7 +137,7 @@
         <div class="stream-grid">
           <!-- Merger -->
           <figure>
-            <video controls loop muted>
+            <video controls loop muted preload="metadata">
               <source src="videos/NGC5053_disc_vs_merger.mp4" type="video/mp4">
             </video>
             <figcaption>
@@ -137,7 +147,7 @@
 
           <!-- Bar -->
           <figure>
-            <video controls loop muted>
+            <video controls loop muted preload="metadata">
               <source src="videos/NGC5053_disc_vs_bar.mp4" type="video/mp4">
             </video>
             <figcaption>
@@ -147,7 +157,7 @@
 
           <!-- Dark matter subhalos -->
           <figure>
-            <video controls loop muted>
+            <video controls loop muted preload="metadata">
               <source src="videos/NGC5053_DM_static_pot.mp4" type="video/mp4">
             </video>
             <figcaption>
