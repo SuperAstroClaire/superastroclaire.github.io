@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>The multiple origins of spurs in stellar streams</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .stream-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+        justify-items: center;
+        margin: 2rem 0;
+      }
+
+      /* Responsive: stack vertically on small screens */
+      @media (max-width: 900px) {
+        .stream-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .stream-grid figure,
+      .single-figure {
+        margin: 0;
+        text-align: center;
+      }
+
+      .stream-grid img,
+      .stream-grid video {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 0.5rem;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .single-figure {
+        margin: 2rem auto;
+        max-width: 700px;
+      }
+
+      .single-figure img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        display: block;
+        margin: 0 auto;
+        background: #fff; /* the paper figure has a transparent/white background */
+      }
+
+      .stream-grid figcaption,
+      .single-figure figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: #aaa;
+        line-height: 1.4;
+      }
+
+      .placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 16 / 9;
+        border: 1px dashed #666;
+        border-radius: 0.5rem;
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">← Back to Home</a>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+      <section id="content" class="main">
+        <header class="major">
+          <h1>The Multiple Origins of Spurs in Stellar Streams</h1>
+          <p>A challenge for dark matter diagnostics</p>
+        </header>
+
+        <p>
+          Spurs, features that stick out from the main track of a stellar stream, are often interpreted as the
+          signature of an encounter with a <strong>dark matter subhalo</strong>, and have been proposed as a probe of
+          the clustering and nature of dark matter. But subhalos are not the only possible perturbers.
+          This project asks a simple question: <strong>can other components of a galaxy produce the same features?</strong>
+          The study is presented in our paper
+          <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
+            <em>The multiple origins of spurs in stellar streams: a challenge for dark matter diagnostics</em>
+          </a> (Guillaume et&nbsp;al., 2026).
+        </p>
+
+        <h2>Three Perturbers, One Stream</h2>
+        <p>
+          We evolved the same set of <strong>36 stellar streams</strong>, produced by globular clusters, in four versions
+          of a Milky-Way-like galaxy: an unperturbed <strong>axisymmetric disc</strong> (reference), a galaxy undergoing a
+          <strong>1:10 merger</strong>, a galaxy hosting a <strong>stellar bar</strong>, and a galaxy whose
+          dark matter halo contains a population of <strong>subhalos</strong>.
+          The figure below shows one example stream in each configuration: spurs appear in all three perturbed cases,
+          but not in the unperturbed disc.
+        </p>
+
+        <div class="single-figure">
+          <img src="images/spurs_fig1.png" alt="The same stream in four configurations: axisymmetric disc, galactic merger, galactic bar and dark matter subhalos">
+          <figcaption>
+            The same stream in four configurations (top to bottom): axisymmetric disc, galactic merger, galactic bar,
+            and dark matter subhalos, shown in stream coordinates (&Phi;<sub>1</sub>, &Phi;<sub>2</sub>) and as a
+            function of galactocentric distance. Red circle: progenitor.
+          </figcaption>
+        </div>
+
+        <h2>How the Spurs Form</h2>
+        <p>
+          Below, the animations show how the stream evolves in each scenario.
+        </p>
+
+        <div class="stream-grid">
+          <!-- Merger -->
+          <figure>
+            <video controls loop muted>
+              <source src="videos/spurs_merger.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+              <strong>Galactic merger.</strong> As the satellite passes close to the stream, stars at the leading end feel a
+              different gravitational pull than the rest of the stream. They drift off the main track and form a spur.
+            </figcaption>
+          </figure>
+
+          <!-- Bar -->
+          <figure>
+            <video controls loop muted>
+              <source src="videos/spurs_bar.mp4" type="video/mp4">
+            </video>
+            <figcaption>
+              <strong>Galactic bar.</strong> Once the bar has formed, its rotating gravitational torque can scatter tidal debris
+              off the stream, producing spurs.
+            </figcaption>
+          </figure>
+
+          <!-- Dark matter subhalos (video coming soon) -->
+          <figure>
+            <!--
+            <video controls loop muted>
+              <source src="videos/spurs_dm.mp4" type="video/mp4">
+            </video>
+            -->
+            <div class="placeholder">Animation coming soon</div>
+            <figcaption>
+              <strong>Dark matter subhalos.</strong> Many small encounters, each affecting only a short segment of the stream.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h2>Main Results</h2>
+        <p>
+          Spurs formed in <strong>50%</strong> of the streams in the merger case, <strong>25%</strong> with the bar, and
+          <strong>28%</strong> with dark matter subhalos. The spurs produced by these three mechanisms look
+          <strong>morphologically similar</strong>, and the repeated, diverse encounters with subhalos make it impossible to
+          link a given spur to a single event.
+        </p>
+        <p>
+          Spurs should therefore not be used on their own to identify the mechanism that created them, nor to
+          constrain the nature of dark matter, unless the other perturbers have been ruled out. A more promising path is a
+          <strong>statistical approach</strong> across many streams, combining morphology and kinematics and compared with
+          simulations covering a wider range of subhalo populations, bars, and merger histories.
+        </p>
+
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p class="copyright">
+        &copy; Claire Guillaume 2026. Design: <a href="https://html5up.net">HTML5 UP</a>.
+      </p>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
